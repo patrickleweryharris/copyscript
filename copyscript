@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DIR=`pwd`
+DIRECTORY=$1
+
+if [ -d "$DIRECTORY" ]; then
+  cp -v $DIR/* $DIRECTORY | cat -n
+  echo "Files copied succesfully"
+elif [[ -f $DIRECTORY ]]; then
+  echo "$DIRECTORY is a file"
+  exit 1
+else
+  echo "$DIRECTORY is not valid"
+  exit 1
+fi
