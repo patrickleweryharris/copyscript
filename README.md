@@ -8,13 +8,9 @@
 Copies your current directory to whichever directory you specify
 
 ## Table of Contents
-
-- [Background](#background)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-
-## Background
 
 ## Install
 
