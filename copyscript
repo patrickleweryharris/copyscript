@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DIR=`pwd`
-DIRECTORY=$1
+# Trim trailing slashes from input (necessary for grep)
+DIRECTORY=$(echo $1 | sed 's:/*$::')
 
 if [ -d "$DIRECTORY" ]; then
-  cp -v $DIR/* $DIRECTORY | cat -n
+  cp -vR `ls -A | grep -v "^$DIRECTORY\$"` $DIRECTORY | cat -n
   echo "Files copied succesfully"
 elif [[ -f $DIRECTORY ]]; then
   echo "$DIRECTORY is a file"
